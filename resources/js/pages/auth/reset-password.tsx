@@ -36,13 +36,13 @@ export default function ResetPassword({ token, email }: ResetPasswordProps) {
     };
 
     return (
-        <AuthLayout title="Reset password" description="Please enter your new password below">
+        <AuthLayout title="Réinitialisation de votre mot de passe" description="Entré votre nouveau mot de passe">
             <Head title="Reset password" />
 
             <form onSubmit={submit}>
                 <div className="grid gap-6">
                     <div className="grid gap-2">
-                        <Label htmlFor="email">Email</Label>
+                        <Label htmlFor="email">Adresse email</Label>
                         <Input
                             id="email"
                             type="email"
@@ -57,7 +57,7 @@ export default function ResetPassword({ token, email }: ResetPasswordProps) {
                     </div>
 
                     <div className="grid gap-2">
-                        <Label htmlFor="password">Password</Label>
+                        <Label htmlFor="password">Mot de passe</Label>
                         <Input
                             id="password"
                             type="password"
@@ -73,7 +73,7 @@ export default function ResetPassword({ token, email }: ResetPasswordProps) {
                     </div>
 
                     <div className="grid gap-2">
-                        <Label htmlFor="password_confirmation">Confirm password</Label>
+                        <Label htmlFor="password_confirmation">Confirmer votre mot de passe</Label>
                         <Input
                             id="password_confirmation"
                             type="password"
@@ -89,7 +89,7 @@ export default function ResetPassword({ token, email }: ResetPasswordProps) {
 
                     <Button type="submit" className="mt-4 w-full" disabled={processing}>
                         {processing && <LoaderCircle className="h-4 w-4 animate-spin" />}
-                        Reset password
+                        Réinitialisé mon mot de passe
                     </Button>
                 </div>
             </form>

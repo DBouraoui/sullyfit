@@ -6,8 +6,8 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: rootp
-      MYSQL_USER: root
-      MYSQL_PASSWORD: root
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
       MYSQL_DATABASE: app
     volumes:
       - db_data:/var/lib/mysql

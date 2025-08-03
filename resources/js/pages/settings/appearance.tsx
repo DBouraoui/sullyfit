@@ -17,11 +17,11 @@ const breadcrumbs: BreadcrumbItem[] = [
 export default function Appearance() {
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
-            <Head title="Appearance settings" />
+            <Head title="Apparence de l'application" />
 
             <SettingsLayout>
                 <div className="space-y-6">
-                    <HeadingSmall title="Appearance settings" description="Update your account's appearance settings" />
+                    <HeadingSmall title="Paramètre d'apparence" description="Modifier vos préférence d'apparence d'application" />
                     <AppearanceTabs />
                 </div>
             </SettingsLayout>

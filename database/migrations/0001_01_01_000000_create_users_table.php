@@ -35,6 +35,33 @@ return new class extends Migration
             $table->longText('payload');
             $table->integer('last_activity')->index();
         });
+
+        Schema::create('user_informations', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('user_id')->nullable()->index();
+            $table->date('birthdate')->nullable();
+            $table->string('gender')->nullable();
+            $table->float('height')->nullable();
+            $table->float('weight')->nullable();
+            $table->string('level')->nullable();
+            $table->string('sport')->nullable();
+            $table->string('frequencies')->nullable();
+            $table->timestamps();
+
+            $table->unique('user_id');
+        });
+
+        Schema::create('goals', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('user_id')->nullable()->index();
+            $table->float('actual_weight')->nullable();
+            $table->float('target_weight')->nullable();
+            $table->date('start_date')->nullable();
+            $table->date('end_date')->nullable();
+            $table->boolean('isSuccess')->nullable();
+            $table->timestamps();
+
+        });
     }
 
     /**
@@ -45,5 +72,7 @@ return new class extends Migration
         Schema::dropIfExists('users');
         Schema::dropIfExists('password_reset_tokens');
         Schema::dropIfExists('sessions');
+        Schema::dropIfExists('user_informations');
+        Schema::dropIfExists('goals');
     }
 };

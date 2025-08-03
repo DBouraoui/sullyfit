@@ -5,22 +5,24 @@ import { cn } from '@/lib/utils';
 import { type NavItem } from '@/types';
 import { Link } from '@inertiajs/react';
 import { type PropsWithChildren } from 'react';
+import { Lock, Sun, User } from 'lucide-react';
+import { Icon } from '@/components/icon';
 
 const sidebarNavItems: NavItem[] = [
     {
         title: 'Profile',
         href: '/settings/profile',
-        icon: null,
+        icon: User,
     },
     {
-        title: 'Password',
+        title: 'Mot de passe',
         href: '/settings/password',
-        icon: null,
+        icon: Lock,
     },
     {
-        title: 'Appearance',
+        title: 'Apparence',
         href: '/settings/appearance',
-        icon: null,
+        icon: Sun,
     },
 ];
 
@@ -34,7 +36,7 @@ export default function SettingsLayout({ children }: PropsWithChildren) {
 
     return (
         <div className="px-4 py-6">
-            <Heading title="Settings" description="Manage your profile and account settings" />
+            <Heading title="Paramètre" description="Modifier tout les paramètre de votre compte" />
 
             <div className="flex flex-col space-y-8 lg:flex-row lg:space-y-0 lg:space-x-12">
                 <aside className="w-full max-w-xl lg:w-48">
@@ -50,7 +52,7 @@ export default function SettingsLayout({ children }: PropsWithChildren) {
                                 })}
                             >
                                 <Link href={item.href} prefetch>
-                                    {item.title}
+                                    {item.icon && <Icon iconNode={item.icon} className="h-5 w-5" />} {item.title}
                                 </Link>
                             </Button>
                         ))}
